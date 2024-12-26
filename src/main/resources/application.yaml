@@ -17,3 +17,13 @@ server:
 
 my-jwt:
   key: I2ZLgzZUSSXOlLbM6DD84qYBT/CvLfRANuq5aaHAYWE=
+
+yandex:
+  disk:
+    oauth-token: y0__wgBEMbV7_cCGKONNCDZpNfuETGuWkwxLscPCPjIyW6gbbsFSg_y
+    upload-path: /backups
+pg:
+  dump-path: F:\PostgreSQL\16\bin\pg_dump.exe
+
+backup:
+  file-location: src/main/resources/backups

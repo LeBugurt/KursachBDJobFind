@@ -27,6 +27,7 @@ public class SecurityConfiguration {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**", "/api/user/add").permitAll()
+                        .requestMatchers("/backup/trigger").hasRole("ADMIN")
                         .requestMatchers("/api/vacancies/**", "/api/resumes").hasAnyRole("HR", "ADMIN")
                         .requestMatchers("/api/resumes/**", "/api/vacancies").hasAnyRole("WORKER", "ADMIN")
                         .anyRequest().authenticated()

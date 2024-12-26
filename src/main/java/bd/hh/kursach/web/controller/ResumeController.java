@@ -78,7 +78,6 @@ public class ResumeController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResumeDto> updateResume(@RequestBody ResumeDto resumeDto) {
-
         return resumeService.updateResume(resumeDto) != null ? new ResponseEntity<>(resumeService.updateResume(resumeDto),
                 HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
