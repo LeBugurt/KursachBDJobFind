@@ -23,7 +23,7 @@ public class ResumeDto {
     private String status;
     private UUID locationId;
     private UUID statusId;
-    private List<SkillsDto> skills;
+    private List<String> skills;
     private String city;
     private String region;
     private String country;

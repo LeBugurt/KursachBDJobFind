@@ -64,6 +64,7 @@ public class ResumeServiceImpl implements ResumeService {
         List<ResumeDto> resumeDtos = new ArrayList<>();
         for (Resume resume : resumes) {
             ResumeDto resumeDto = resumeMapper.toResumeDto(resume);
+            resumeDto.setLocationId(resume.getLocationID());
             resumeDto.setSkills(resumeSkillsRepository.findAllById(resume.getId()));
             resumeDto.setStatus(statusRepository.findById(resume.getStatusId())
                     .orElseThrow(() -> new ResourceNotFoundException("Status not found with id: " + resume.getStatusId())).getStatus().toString());
