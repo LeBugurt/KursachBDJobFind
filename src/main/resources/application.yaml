@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/kursachBD
+    username: root
+    password: 123
+
+  liquibase:
+    change-log: db/changelog/main-changelog.xml
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  forward-headers-strategy: framework
+  port: 8448
+
+my-jwt:
+  key: I2ZLgzZUSSXOlLbM6DD84qYBT/CvLfRANuq5aaHAYWE=

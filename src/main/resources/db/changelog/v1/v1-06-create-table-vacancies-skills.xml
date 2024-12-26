@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1-create-table-vacancies-skills.xml" author="ShentsevA">
+        <createTable tableName="tb_vacancies_skills">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="id_vacancies" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_vacancy_skills_id" references="tb_vacancy(id)" deleteCascade="true"/>
+            </column>
+
+            <column name="id_skills" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_skills_id" references="tb_skills(id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+</changeSet>
+
+    <changeSet id="v1-full-table-vacancy-skills" author="ShentsevA">
+        <loadData tableName="tb_vacancies_skills" file="data/vacancy-skills-data.csv"/>
+    </changeSet>
+
+</databaseChangeLog>

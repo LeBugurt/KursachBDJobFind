@@ -1,0 +1,11 @@
+id,surname,name,patronymic,email,phone,password,role
+1733622b-dc4b-4683-ba91-f0768f8a67e2,Petrov,Petr,Petrovich,petr.petrov@example.com,+79991234568,$2a$10$t3uQXVpx3Ai8IvaIey/Pou8DimRjrquY4iZUoWaI6JOd8nDZSTWmy,HR
+5d0fecad-983a-4303-abee-d2bb6e86c5ac,Иванов,Иван,Иванович,ivan.ivanov@example.com,+79991234567,$2a$10$offkUadi2R8y6hMpB1c0v.FAa4LR8vsOcojnhsn99.XuR03MwjWum,ADMIN
+bbd6c526-7a85-4e4a-a893-6e7d991ded22,Смирнов,Сергей,Сергеевич,sergey.smirnov@example.com,+79998765432,$2a$10$VYDQogK76PVCHxf75LCOl.qPobVUHkIophJR4d8MTsAFmV3lTfwU6,WORKER
+039f00e9-2600-483c-9cd1-96d5779820de,Сидоров,Сидор,Сидорович,sidor.sidorov@example.com,+79990001122,$2a$10$VddlNzKhEVMsxFii.6smFuf0ykFAuGZofDoJBdBrG6yOSPNpzykZu,HR
+d2c9d7f0-acb3-4000-a7ad-637ecc2d6153,Кузнецов,Алексей,Алексеевич,alexey.kuznetsov@example.com,+79994561234,$2a$10$/CN18DmIPpldPD.YhLNd4O1WdMY0PY0whlDh4y4/QjTsDFbEUTSFW,WORKER
+7cb0937b-c827-44f0-ba50-8431274a5334,Попов,Дмитрий,Дмитриевич,dmitry.popov@example.com,+79991230000,$2a$10$eJgOgkJHnP8LMg6VpXb.1eIyslqBNJLnhusIP3r0GFbGeXJAg/.Mu,HR
+2f0dc929-6c9b-4fc2-8a11-6cb9805d2661,Федоров,Федор,Федорович,fedor.fedorov@example.com,+79991112233,$2a$10$lbt2HML4NZgA5pO5tvn75ugCL4hG1KmJxE8I85q29ic.x728oc49u,WORKER
+f05d36e0-169e-4350-a7bc-494b92eec76f,Морозов,Андрей,Андреевич,andrey.morozov@example.com,+79994321098,$2a$10$yTedWbte4weVaOzwEUs8GerEY9NmXSThGnLXa7qbOU0d3ShVw9P1a,HR
+e6f464bf-8d6f-468b-9445-73ff4dea3d6d,Новиков,Михаил,Михайлович,mikhail.novikov@example.com,+79992223344,$2a$10$9/CDp21tmBxkn5FrEAppGefiASX3mPy1RqA.t9gIQxxML3ICujYh6,WORKER
+589f5a89-2a51-4fee-8d2f-6d7d003483cb,Васильев,Василий,Васильевич,vasiliy.vasiliev@example.com,+79995556677,$2a$10$V4Q0J.1H9cgJPmzqKdfLf.slOFvnBoxp84YUyJ8R0eUkROuVP2qs6,HR

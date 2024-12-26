@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1-create-table-resume-skills" author="ShentsevA">
+        <createTable tableName="tb_resume_skills">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_resume" type="UUID">
+                <constraints foreignKeyName="fk_resume_skills_id" references="tb_resume(id)" deleteCascade="true"/>
+            </column>
+            <column name="id_skills" type="UUID">
+                <constraints foreignKeyName="fk_skills_resume_id" references="tb_skills(id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-full-table-resume-skills" author="ShentsevA">
+        <loadData tableName="tb_resume_skills" file="data/resume-skills-data.csv"/>
+    </changeSet>
+</databaseChangeLog>

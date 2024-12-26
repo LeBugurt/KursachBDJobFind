@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1-create-table-location" author="ShentsevA">
+        <createTable tableName="tb_location">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="country" type="varchar(35)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="city" type="varchar(35)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="region" type="varchar(35)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-full-data-loc" author="ShentsevA">
+        <loadData tableName="tb_location" file="data/location-data.csv"/>
+    </changeSet>
+</databaseChangeLog>

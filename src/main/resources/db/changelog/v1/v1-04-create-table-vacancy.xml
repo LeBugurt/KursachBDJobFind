@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1-create-table-vacancy" author="ShentsevA">
+        <createTable tableName="tb_vacancy">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true"/>
+            </column>
+            
+            <column name="position" type="varchar(60)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="company" type="varchar(60)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="salary" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="currency" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="description" type="varchar(2048)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="grade" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="email" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="publication_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="user_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_user_id" references="tb_user(id)" deleteCascade="true"/>
+            </column>
+
+            <column name="id_vacancies_status" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_vacancies_status_id" references="tb_status(id)" deleteCascade="true"/>
+            </column>
+
+            <column name="id_vacancies_location" type="uuid">
+                <constraints nullable="true" foreignKeyName="fk_vacancies_location_id" references="tb_location(id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-full-table-vacancy" author="ShentsevA">
+        <loadData tableName="tb_vacancy" file="data/vacancy-data.csv"/>
+    </changeSet>
+</databaseChangeLog>

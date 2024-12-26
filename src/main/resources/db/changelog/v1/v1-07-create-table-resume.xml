@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1-create-table-resume" author="ShentsevA">
+        <createTable tableName="tb_resume">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="position" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="surname" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="patronymic" type="VARCHAR(50)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="grade" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="working_hours" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="moving" type="BOOLEAN">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="willingness_travel" type="BOOLEAN">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="salary" type="BIGINT">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="email" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="user_id" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_user_id" references="tb_user(id)" deleteCascade="true"/>
+            </column>
+
+            <column name="id_resume_status" type="uuid">
+                <constraints nullable="false" foreignKeyName="fk_resume_status_id" references="tb_status(id)" deleteCascade="true"/>
+            </column>
+
+            <column name="id_resume_location" type="uuid">
+                <constraints nullable="true" foreignKeyName="fk_resume_location_id" references="tb_location(id)" deleteCascade="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-full-table-resume" author="ShentsevA">
+        <loadData tableName="tb_resume" file="data/resume-data.csv"/>
+    </changeSet>
+
+</databaseChangeLog>
